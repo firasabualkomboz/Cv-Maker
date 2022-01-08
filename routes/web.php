@@ -44,6 +44,7 @@ Route::group([], function (){
             Route::resource('/articles',\App\Http\Controllers\Admin\ArticlesController::class);
             Route::resource('/personals',\App\Http\Controllers\Admin\PersonalsController::class);
             Route::resource('/experiences',\App\Http\Controllers\Admin\ExperiencesController::class);
+            Route::resource('/educations',\App\Http\Controllers\Admin\EducationController::class);
             Route::resource('/projects',\App\Http\Controllers\Admin\ProjectController::class);
             Route::resource('/cv',\App\Http\Controllers\Admin\CvController::class);
 
