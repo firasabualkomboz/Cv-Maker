@@ -50,6 +50,15 @@
                     development assignments and get them done and train on big projects.</p>
                     </div>
 
+                @foreach ($experiences as $experience)
+                <div class="experiences-information mt-5 mb-5">
+                <h2> <strong> {{ $experience->company }} </strong> ,  <span style="font-size: 16px">{{ $experience->location }}</span> - <span style="font-style: italic; font-size:16px">{{ $experience->job_title }}</span>  </h2>
+                <p><span>2021 Aug - 2021 Juni</span></p>
+                <p>{{ $experience->description }}</p>
+                </div>
+                @endforeach
+
+
                 </div>
                 <div class="col-lg-6 mt-5 mb-5">
 
