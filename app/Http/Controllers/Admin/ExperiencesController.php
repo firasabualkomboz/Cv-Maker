@@ -96,6 +96,9 @@ class ExperiencesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $experiences  = Experience::findOrFail($id);
+        $experiences->delete();
+        return redirect()->route('admin.categories.index')
+        ->with('success','The Experiences Has Been Deleted Successfully');
     }
 }
