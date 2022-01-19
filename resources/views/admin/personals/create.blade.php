@@ -36,7 +36,7 @@ Add Personal Information
         </div>
         <div class="col-lg-4">
             <label>Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Enter Tag"/>
+            <input type="text" class="form-control" name="name" value="{{old('name')}}"placeholder="{{old('name')}}"/>
         </div>
         <div class="col-lg-4">
             <input type="hidden"  class="form-control" name="user_id"/>
@@ -48,58 +48,54 @@ Add Personal Information
 
 </div>
 
-<div class="form-group">
-    <label for="exampleTextarea">Over view <span class="text-danger">*</span></label>
-    <textarea class="form-control"  name="overview" id="exampleTextarea" rows="3"></textarea>
-</div>
+        <div class="form-group">
+        <label for="exampleTextarea">Over view <span class="text-danger">*</span></label>
+        <textarea class="form-control"  name="overview" rows="3"></textarea>
+        </div>
 
 
-<div class="form-group">
-<div class="row">
+        <div class="form-group">
+        <div class="row">
 
-<div class="col-lg-4">
-<label>Street</label>
-<input type="text" class="form-control" name="street" placeholder="Enter Tag"/>
-</div>
-<div class="col-lg-4">
-<label>City</label>
-<input type="text" class="form-control" name="city" placeholder="Enter Tag"/>
-</div>
+                <div class="col-lg-4">
+                <label>Street</label>
+                <input type="text" class="form-control" name="street" placeholder="Enter Street"/>
+                </div>
 
-<div class="col-lg-4">
-<label>From</label>
-<input type="text" class="form-control" name="from" placeholder="Enter Tag"/>
-</div>
+                <div class="col-lg-4">
+                <label>City</label>
+                <input type="text" class="form-control" name="city" placeholder="Enter City"/>
+                </div>
 
-</div>
-</div>
+                <div class="col-lg-4">
+                <label>From</label>
+                <input type="text" class="form-control" name="from" placeholder="Enter From"/>
+                </div>
 
-
-<div class="form-group">
-
-<div class="row">
-<div class="col-lg-4">
-<label>email</label>
-<input type="number" class="form-control" name="email" placeholder="Enter Tag"/>
-</div>
-<div class="col-lg-4">
-<label>mobile</label>
-<input type="number" class="form-control" name="mobile" placeholder="Enter Tag"/>
-</div>
-<div class="col-lg-4">
-
-<label>telephone</label>
-<input type="number" class="form-control" name="telephone" placeholder="Enter Tag"/>
-</div>
-<div class="col-lg-4">
-
-</div>
-</div>
-
-</div>
+        </div>
+        </div>
 
 
+        <div class="form-group">
 
+        <div class="row">
+        <div class="col-lg-4">
+        <label>email</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter Email"/>
+        </div>
+        <div class="col-lg-4">
+        <label>mobile</label>
+        <input type="number" class="form-control" name="mobile" placeholder="Enter mobile"/>
+        </div>
+        <div class="col-lg-4">
+
+        <label>telephone</label>
+        <input type="number" class="form-control" name="telephone" placeholder="Enter telephone"/>
+        </div>
+
+        </div>
+
+        </div>
 
 
 </div>

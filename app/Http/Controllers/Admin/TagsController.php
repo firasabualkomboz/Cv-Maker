@@ -40,9 +40,9 @@ class TagsController extends Controller
         $tags = Tag::create([
             'tag' => $request->post('tag'),
         ]);
-
-        return redirect()->route('admin.tags.index')
-        ->with('success','Your Tag Has Been Successfully Added');
+        toastr()->success('Your Skills Has Been Successfully Added');
+        return redirect()->back();
+        // return redirect()->route('admin.tags.index');
     }
 
 
@@ -73,7 +73,8 @@ class TagsController extends Controller
     {
         $tag = Tag::findOrFail($id);
         $tag->delete();
-        return redirect()->route('admin.tags.index')
-        ->with('success','The Tag Has Been Deleted Successfully');
+        toastr()->error('The Skills Has Been Deleted Successfully');
+        return redirect()->route('admin.tags.index');
+
     }
 }

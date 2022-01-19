@@ -61,9 +61,8 @@ class PersonalsController extends Controller
 
         ]);
 
-
-        return redirect()->route('admin.personals.index')
-            ->with('success','Your Personal Information Has Been Successfully Added');
+            toastr()->success('Your Personal Information Has Been Successfully Added');
+            return redirect()->route('admin.personals.index');
     }
 
 
@@ -103,6 +102,6 @@ class PersonalsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }
