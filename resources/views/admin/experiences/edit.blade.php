@@ -2,11 +2,11 @@
 <div class="card card-custom">
 <div class="card-header">
 <h3 class="card-title">
-Edit articles
+Edit experience
 </h3>
 </div>
 <!--begin::Form-->
-<form method="post" action="{{route('admin.articles.update',[$article->id])}}" enctype="multipart/form-data">
+<form method="post" action="{{route('admin.experiences.update',[$experience->id])}}" enctype="multipart/form-data">
 @csrf
     @method('put')
 
@@ -22,49 +22,36 @@ Edit articles
 </div>
 @endif
 
+
 <div class="form-group">
-<label>Article Title</label>
-<input type="text" class="form-control" name="title" value="{{old('title',$article->title)}}" placeholder="Enter Tag"/>
+<label>Company</label>
+<input type="text" class="form-control" name="company" value="{{old('company',$experience->company)}}" placeholder=""/>
+</div>
+
+<div class="form-group">
+<label>location</label>
+<input type="text" class="form-control" name="location" value="{{old('location',$experience->location)}}" placeholder=""/>
+</div>
+
+<div class="form-group">
+<label>jop title</label>
+<input type="text" class="form-control" name="jop_title" value="{{old('jop_title',$experience->jop_title)}}" placeholder=""/>
+</div>
+
+<div class="form-group">
+<label>start at</label>
+<input type="date" class="form-control" name="start_at" value="{{old('start_at',$experience->start_at)}}" placeholder=""/>
+</div>
+
+<div class="form-group">
+<label>end at</label>
+<input type="date" class="form-control" name="end_at"   value="{{old('end_at',$experience->end_at)}}" placeholder=""/>
 </div>
 
 <div class="form-group mb-1">
-<label for="exampleTextarea">Article Content <span class="text-danger">*</span></label>
-<textarea class="form-control"  name="content" value="{{old('content',$article->content)}}" rows="3"></textarea>
+<label for="exampleTextarea">description <span class="text-danger">*</span></label>
+<textarea class="form-control"  name="description" value="{{old('description',$experience->description)}}" rows="3"></textarea>
 </div>
-
-<div class="form-group">
-<label for="exampleSelectl">Article Category</label>
-<select class="form-control form-control-lg" name="category_id">
-@foreach($categories as $category)
-<option value="{{$category->id}}"  @if ($category->id == old('category_id' , $article->category_id ) ) selected @endif>{{$category->name}}</option>
-@endforeach
-</select>
-</div>
-
-<div class="form-group">
-<label>Article Tags</label>
-<div class="checkbox-inline">
-@foreach($tags as $tag)
-<label class="checkbox">
-<input type="checkbox" value="{{$tag->id}}" name="tag[]"  @if (in_array($tag->id , $article_tag))checked @endif />
-<span></span>
-{{$tag->tag}}
-</label>
-@endforeach
-
-</div>
-</div>
-
-
-<div class="form-group">
-<label>Article Photo</label>
-<div></div>
-<div class="custom-file">
-<input type="file" class="custom-file-input" name="photo" id="customFile"/>
-<label class="custom-file-label" for="customFile">Choose Photo</label>
-</div>
-</div>
-
 
 
 </div>

@@ -40,33 +40,61 @@
             </div>
 
             <div class="row mt-5 mb-3">
-                <div class="col-lg-6 mt-5 mb-5">
-                    <h4 class="mt-5 mb-5">EXPERIENCE</h4>
 
-                    <div class="experiences-information">
-                    <h2> <strong>Company Name </strong> ,  <span>Location</span> - <span>developer</span>  </h2>
-                    <p><span>2021 Aug - 2021 Juni</span></p>
-                    <p>Company NameWork as a trainee at New Line. I do a full time job and get given some web
-                    development assignments and get them done and train on big projects.</p>
-                    </div>
+
+                <div class="col-lg-8 mt-5 mb-5">
+                <h2 class="">EXPERIENCE</h2>
+                @foreach ($experiences as $experience)
+
+                <div class="experiences-information mt-10 mb-10">
+                <h2> <strong>  {{ $experience->company }} </strong> ,  <span>{{ $experience->location }}</span> - <span class="" style="font-size: 16px;">{{ $experience->job_title }}</span>  </h2>
+                <p><span>{{ $experience->start_at }} - {{ $experience->end_at }}</span></p>
+                <p>{{ $experience->description }}</p>
+                </div>
+
+                @endforeach
+
+                <div class="experiences-information mt-10 mb-10">
+                <h2> <strong> NewLine </strong> ,  <span>Gaza</span> - <span class="" style="font-size: 16px;">backend Developer</span>  </h2>
+                <p><span>2021 Aug - 2021 Juni</span></p>
+                <p>Company NameWork as a trainee at New Line. I do a full time job and get given some web
+                development assignments and get them done and train on big projects.</p>
+                </div>
+                <div class="experiences-information mt-10 mb-10">
+                <h2> <strong> NewLine </strong> ,  <span>Gaza</span> - <span class="" style="font-size: 16px;">backend Developer</span>  </h2>
+                <p><span>2021 Aug - 2021 Juni</span></p>
+                <p>Company NameWork as a trainee at New Line. I do a full time job and get given some web
+                development assignments and get them done and train on big projects.</p>
+                </div>
 
                 @foreach ($experiences as $experience)
-                <div class="experiences-information mt-5 mb-5">
+                <div class="experiences-information mt-10 mb-10">
                 <h2> <strong> {{ $experience->company }} </strong> ,  <span style="font-size: 16px">{{ $experience->location }}</span> - <span style="font-style: italic; font-size:16px">{{ $experience->job_title }}</span>  </h2>
                 <p><span>2021 Aug - 2021 Juni</span></p>
                 <p>{{ $experience->description }}</p>
                 </div>
                 @endforeach
 
-
                 </div>
-                <div class="col-lg-6 mt-5 mb-5">
 
+                <div class="col-lg-4 mt-5 mb-5">
+                <div class="our-skills">
+                <h2>Skills</h2>
+                <ol class="list-unstyled mt-5 mb-5">
+                <li class="mb-4">Html</li>
+                <li class="mb-4">Html</li>
+                <li class="mb-4">Html</li>
+                <li class="mb-4">Html</li>
+                <li class="mb-4">Html</li>
+                </ol>
                 </div>
+                </div>
+
+
             </div>
 
             <div class="row mt-5 mb-5">
-                <div class="col-lg-6 mt-5 mb-5">
+                <div class="col-lg-8 mt-5 mb-5">
                     <h4 class="mt-5 mb-5">EDUCATION</h4>
 
                     <div class="experiences-information">
@@ -77,9 +105,20 @@
                     </div>
 
                 </div>
-                <div class="col-lg-6 mt-5 mb-5">
+                <div class="col-lg-4 mt-5 mb-5 text-start">
 
-                </div>
+                        <div class="our-skills">
+                        <h2>Skills</h2>
+                        <ol class="list-unstyled mt-5 mb-5">
+                        <li class="mb-4">Html</li>
+                        <li class="mb-4">Html</li>
+                        <li class="mb-4">Html</li>
+                        <li class="mb-4">Html</li>
+                        <li class="mb-4">Html</li>
+                        </ol>
+                        </div>
+                        </div>
+
             </div>
 
             <div class="row mt-5 mb-5">

@@ -48,10 +48,8 @@ class ExperiencesController extends Controller
 
         ]);
 
-
-        return redirect()->route('admin.experiences.index')
-            ->with('success','Your Experience Has Been Successfully Added');
-
+            toastr()->success('Your Experience Has Been Successfully Added');
+            return redirect()->route('admin.experiences.index');
     }
 
     /**
@@ -73,7 +71,10 @@ class ExperiencesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $experience = Experience::findOrFail($id);
+        return view('admin.experiences.edit',[
+            'experience' => $experience ,
+        ]);
     }
 
     /**
@@ -85,7 +86,19 @@ class ExperiencesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $experience = Experience::findOrFail($id);
+
+        $experience->company         = $request->company;
+        $experience->location        = $request->location;
+        $experience->jop_title       = $request->jop_title;
+        $experience->start_at        = $request->start_at;
+        $experience->end_at          = $request->end_at;
+        $experience->description     = $request->description;
+
+        $experience->save();
+
+        return redirect()->route('admin.categories.index')
+        ->with('success','The Category Has Been Updated Successfully');
     }
 
     /**
@@ -98,7 +111,7 @@ class ExperiencesController extends Controller
     {
         $experiences  = Experience::findOrFail($id);
         $experiences->delete();
-        return redirect()->route('admin.categories.index')
-        ->with('success','The Experiences Has Been Deleted Successfully');
+        toastr()->error('The Experiences Has Been Deleted Successfully');
+        return redirect()->route('admin.experiences.index');
     }
 }
