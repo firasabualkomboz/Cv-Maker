@@ -36,7 +36,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--end::Layout Themes-->
 <link rel="shortcut icon" href="{{asset('dashboard_files/assets/media/logos/favicon.ico')}}" />
 @toastr_css
-
+@livewireStyles
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -1922,6 +1922,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--begin::Container-->
 <div class="container">
 <!--begin::Dashboard-->
+@include('livewire.test')
 {{$slot}}
 <!--begin::Row-->
 
@@ -3022,6 +3023,7 @@ License: You must have a valid license purchased only from themeforest(the above
 @toastr_js
 @toastr_render
 
+@livewireScripts
 
 <!--end::Page Scripts-->
 </body>

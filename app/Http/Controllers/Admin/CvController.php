@@ -15,14 +15,15 @@ class CvController extends Controller
     {
         return view('admin.cv.index',[
 
-            'personals' => Personal::where('user_id' , Auth::id())->get(),
-            'experiences' => Experience::where('user_id' , Auth::id())->get(),
+            'personals'     => Personal::where  ('user_id' , Auth::id())->get(),
+            'experiences'   => Experience::where('user_id' , Auth::id())->get(),
+            'educations'     => Experience::where('user_id' , Auth::id())->get(),
 
 
         ]);
     }
 
-  
+
     public function create()
     {
         //
