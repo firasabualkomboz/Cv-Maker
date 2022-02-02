@@ -30,7 +30,11 @@ class ProjectController extends Controller
            'description'    => $request->description,
            'start_at'       => $request->start_at,
            'end_at'         => $request->end_at,
+           'user_id'        => auth()->id(),
+
         ]);
-        return $project;
+
+        toastr()->success('Your Projects Been Successfully Added');
+        return redirect()->route('admin.projects.index');
     }
 }

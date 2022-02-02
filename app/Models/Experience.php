@@ -13,10 +13,12 @@ class Experience extends Model
         'end_at' , 'description' , 'user_id'
 
     ];
+
     public function user(){
 
     return $this->belongsTo(Experience::class);
 
     }
+
 
 }

@@ -18,7 +18,7 @@
 <!--begin::Login Sign in form-->
 <div class="login-signin">
 <div class="mb-20">
-<h3>Sign In To Admin</h3>
+<h3>Sign In To Cv Maker</h3>
 <div class="text-muted font-weight-bold">Enter your details to login to your account:</div>
 </div>
 <form class="form"  method="POST" action="{{ route('login') }}">

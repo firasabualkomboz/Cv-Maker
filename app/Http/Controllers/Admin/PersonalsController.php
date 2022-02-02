@@ -105,6 +105,5 @@ class PersonalsController extends Controller
         $personals = Personal::findOrFail($id);
         $personals->delete();
         toastr()->error('Your Personal Information Has Been Successfully Deleted');
-
     }
 }

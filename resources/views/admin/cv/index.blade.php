@@ -1,40 +1,42 @@
 <x-admin-layout title="Personal Information" category="Peronals">
 
-    @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{session()->get('success')}}
-    </div>
-    @endif
+<div class="border-0 pb-0 mb-5">
+<h4 class="mb-3">Your cv</h4>
+<div class="card-toolbar">
+<button class="btn btn-outline-warning btn-sm mr-2 font-weight-bolder"> <a href="{{ url('admin/cv') }}/downloadPDF}}">Downkoad Cv PDF </a>    <i class="fa fa-file"></i>  </button>
+<a href="{{route('admin.cv.create')}}" class="btn btn-sm btn-outline-danger font-weight-bolder">Change Template </a>
+</div>
+</div>
 
-    <!--end::Notice-->
-    <!--begin::Card-->
+
     <div class="card card-custom">
-    <div class="card-header flex-wrap border-0 pt-6 pb-0">
-    <div class="card-title">
-    <h3 class="card-label">Demo Cv
-    </div>
-    <div class="card-toolbar">
-    <!--begin::Dropdown-->
 
-    <!--end::Dropdown-->
-    <!--begin::Button-->
-    <a href="{{route('admin.cv.create')}}" class="btn btn-primary font-weight-bolder">Change Template </a>
-    <!--end::Button-->
-    </div>
-    </div>
     <div class="card-body">
 
         <div class="cv">
             <div class="row mt-5 mb-5">
 
-                <div class="col-lg-6 mt-5 mb-5">
+                <div class="col-lg-8 mt-5 mb-5">
                     <div class="personals-information">
-                        <h1>Your name </h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis provident atque incidunt quae optio minima saepe corrupti quo harum, ratione, voluptatum modi esse ipsum nesciunt! Ratione placeat facere ab obcaecati.</p>
+                        @foreach ($personals as $personal)
+
+                        <h1 style="font-size: 36px"> {{ $personal->name }} </h1>
+                        <p class="pl-2">{{ $personal->overview }}</p>
+                        @endforeach
+
                     </div>
 
                 </div>
-                <div class="col-lg-6 mt-5 mb-5">
+                <div class="col-lg-4 mt-5 mb-5">
+
+                    <ol class="list-unstyled">
+                        @foreach ($personals as $personal)
+                        <li class="mt-3 mb-3">{{ $personal->street }}</li>
+                        <li class="mt-3 mb-3">{{ $personal->city }} - {{ $personal->from }} </li>
+                        <li class="mt-3 mb-3">{{ $personal->mobile }}</li>
+                        <li class="mt-3 mb-3">{{ $personal->email }}</li>
+                        @endforeach
+                    </ol>
 
                 </div>
             </div>
@@ -47,7 +49,7 @@
                 @foreach ($experiences as $experience)
 
                 <div class="experiences-information mt-10 mb-10" style="text-transform:capitalize">
-                <h3> <strong>  {{ $experience->company }} </strong> ,  <span>{{ $experience->location }}</span> - <span class="" style="font-size: 16px;">{{ $experience->job_title }}</span>  </h2>
+                <h3> <strong>{{ $experience->company }} </strong> , <span>{{ $experience->location }}</span> - <span class="" style="font-size: 16px;">{{ $experience->job_title }}</span>  </h2>
                 <p><span>{{ $experience->start_at }} - {{ $experience->end_at }}</span></p>
                 <p>{{ $experience->description }}</p>
                 </div>
@@ -60,11 +62,9 @@
                 <div class="our-skills">
                 <h2>Skills</h2>
                 <ol class="list-unstyled mt-5 mb-5">
-                <li class="mb-4">Html</li>
-                <li class="mb-4">Html</li>
-                <li class="mb-4">Html</li>
-                <li class="mb-4">Html</li>
-                <li class="mb-4">Html</li>
+                @foreach ($skills as $skill)
+                <li class="mb-4">{{ $skill->tag}}</li>
+                @endforeach
                 </ol>
                 </div>
                 </div>

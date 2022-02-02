@@ -1,4 +1,4 @@
-<x-admin-layout title="Edit Article" category="Articles">
+<x-admin-layout title="Edit Experience" category="Experiences">
 <div class="card card-custom">
 <div class="card-header">
 <h3 class="card-title">

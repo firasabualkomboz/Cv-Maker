@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\CvController;
 use App\Http\Controllers\Api\NewsApiController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -19,7 +21,7 @@ Auth::routes(['register' => false]);
 
 Route::get('/', function () {
 
-    return "this is test" ;
+    return view('welcome');
 
 });
 
@@ -52,10 +54,12 @@ Route::group([], function (){
 
 
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+            Route::get('/downloadPdf', [App\Http\Controllers\Admin\CvController::class, 'downloadPdf'])->name('downloadPdf');
 
 
             Route::resource('roles','\App\Http\Controllers\Admin\RolesController');
             Route::resource('users','\App\Http\Controllers\Admin\UsersController');
+
 
 
 

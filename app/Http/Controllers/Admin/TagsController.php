@@ -6,18 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TagRequest;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TagsController extends Controller
 {
 
-    function __construct()
-    {
+    // function __construct()
+    // {
 
-        $this->middleware('permission:Tags-List|Add-Tags|Update-Tags|Delete-Tags', ['only' => ['index','store']]);
-        $this->middleware('permission:Add-Tags', ['only' => ['create','store']]);
-        $this->middleware('permission:Update-Tags', ['only' => ['edit','update']]);
-        $this->middleware('permission:Delete-Tags', ['only' => ['destroy']]);
-    }
+    //     $this->middleware('permission:Tags-List|Add-Tags|Update-Tags|Delete-Tags', ['only' => ['index','store']]);
+    //     $this->middleware('permission:Add-Tags', ['only' => ['create','store']]);
+    //     $this->middleware('permission:Update-Tags', ['only' => ['edit','update']]);
+    //     $this->middleware('permission:Delete-Tags', ['only' => ['destroy']]);
+    // }
 
     public function index()
     {
@@ -38,7 +39,8 @@ class TagsController extends Controller
     public function store(TagRequest $request)
     {
         $tags = Tag::create([
-            'tag' => $request->post('tag'),
+            'tag'     => $request->post('tag'),
+            'user_id' => auth()->id(),
         ]);
         toastr()->success('Your Skills Has Been Successfully Added');
         return redirect()->back();

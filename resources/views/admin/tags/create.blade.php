@@ -26,6 +26,11 @@ Add tags
 </div>
 @endif
 
+<div class="col-lg-4">
+    <input type="hidden"  class="form-control" name="user_id"/>
+    </div>
+
+    
 <div class="form-group">
 <label>Tag Name</label>
 <input type="text" class="form-control" name="tag" placeholder="Enter Tag"/>
