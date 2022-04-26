@@ -24,21 +24,24 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="{{asset('dashboard_files/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
 <!--end::Page Vendors Styles-->
 <!--begin::Global Theme Styles(used by all pages)-->
-<link href="{{asset('dashboard_files/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{asset('dashboard_files/assets/plugins/custom/prismjs/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
+{{-- <link href="{{asset('dashboard_files/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" /> --}}
+{{-- <link href="{{asset('dashboard_files/assets/plugins/custom/prismjs/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" /> --}}
 <link href="{{asset('dashboard_files/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
 <!--end::Global Theme Styles-->
 <!--begin::Layout Themes(used by all pages)-->
 <link href="{{asset('dashboard_files/assets/css/themes/layout/header/base/light.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{asset('dashboard_files/assets/css/themes/layout/header/menu/light.css')}}" rel="stylesheet" type="text/css" />
+
 <link href="{{asset('dashboard_files/assets/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{asset('dashboard_files/assets/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
+
 <link href="{{asset ('dashboard_files/assets/css/pages/wizard/wizard-1.css') }}" rel="stylesheet" type="text/css" />
 
 <!--end::Layout Themes-->
 <link rel="shortcut icon" href="{{asset('dashboard_files/assets/media/logos/favicon.ico')}}" />
 @toastr_css
 @livewireStyles
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -874,6 +877,7 @@ License: You must have a valid license purchased only from themeforest(the above
 </div>
 <!--end::Header-->
 <!--begin::Content-->
+
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 <!--begin::Subheader-->
 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
@@ -929,15 +933,15 @@ License: You must have a valid license purchased only from themeforest(the above
 <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
 <!--begin::Copyright-->
 <div class="text-dark order-2 order-md-1">
-<span class="text-muted font-weight-bold mr-2">2021©</span>
-<a href="/" target="_blank" class="text-dark-75 text-hover-primary">PAL News</a>
+<span class="text-muted font-weight-bold mr-2">2021 - 2022 ©</span>
+<a href="/" target="_blank" class="text-dark-75 text-hover-primary">CV MAKER</a>
 </div>
 <!--end::Copyright-->
 <!--begin::Nav-->
 <div class="nav nav-dark">
-<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">About</a>
-<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">Team</a>
-<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-0">Contact</a>
+<a href="#" target="_blank" class="nav-link pl-0 pr-5">About</a>
+<a href="#" target="_blank" class="nav-link pl-0 pr-5">Team</a>
+<a href="#" target="_blank" class="nav-link pl-0 pr-0">Contact</a>
 </div>
 <!--end::Nav-->
 </div>

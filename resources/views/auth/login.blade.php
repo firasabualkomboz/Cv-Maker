@@ -11,7 +11,8 @@
 <!--begin::Login Header-->
 <div class="d-flex flex-center mb-15">
 <a href="#">
-<img src="assets/media/logos/logo-letter-13.png" class="max-h-75px" alt="" />
+<img class="max-h-75px" src="{{ asset('dashboard_files/assets/images/hiring.svg') }}" alt="">
+
 </a>
 </div>
 <!--end::Login Header-->
@@ -23,11 +24,6 @@
 </div>
 <form class="form"  method="POST" action="{{ route('login') }}">
 @csrf
-
-<div class="mb-5">
-<span class="opacity-70 mr-4">Super Admin </span>
-<a  id="kt_login_signup" class="text-muted text-hover-primary font-weight-bold">admin@admin.com - 123456</a>
-</div>
 
 <div class="form-group mb-5">
 <input class="form-control h-auto form-control-solid py-4 px-8 @error('email') is-invalid @enderror" type="email" placeholder="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>

@@ -1,4 +1,5 @@
 <x-admin-layout title="Add New Category" category="Categories">
+
 <div class="card card-custom">
 <div class="card-header">
 <h3 class="card-title">
@@ -25,6 +26,7 @@ Add Categories
 <label>Category Name</label>
 <input type="text" class="form-control" name="name" placeholder="Enter Category"/>
 </div>
+
 
 
 </div>
