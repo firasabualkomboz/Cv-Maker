@@ -17,7 +17,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::get('/', function () {
 

@@ -21,6 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->text('roles_name');
             $table->string('status',10);
+            $table->string('country');
+            $table->string('city');
+            $table->string('street');
+            $table->string('job_description');
+            $table->string('phone');
+            $table->string('website')->nullable();
+            $table->boolean('is_admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
